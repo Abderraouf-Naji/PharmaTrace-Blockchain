@@ -1,0 +1,24 @@
+<div class="container mt-5 text-center">
+    <h2>Gestion des Distributeurs</h2>
+    
+    <!-- Navigation entre les composants -->
+    <div class="row">
+        <div class="col-12 text-center">
+        <!-- Lien pour voir la liste des fabricants -->
+        <a class="btn btn-primary btn-lg mx-2" routerLink="list-distributors" routerLinkActive="active">Voir la liste des Distributeurs</a>
+        
+        <!-- Lien pour ajouter un nouveau fabricant -->
+        <a class="btn btn-primary btn-lg mx-2" routerLink="add-distributors" routerLinkActive="active">Ajouter un Distributeur</a>
+
+      </div>
+    </div>
+
+
+    <!-- Zone pour afficher les composants -->
+    <div class="row">
+      <div class="col-md-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  

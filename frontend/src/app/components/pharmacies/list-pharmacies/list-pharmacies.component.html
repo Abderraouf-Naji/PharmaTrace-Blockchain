@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h2 class="text-center">Liste des Pharmacies</h2>
+    
+    <!-- Affichage d'un message si aucune pharmacie n'est trouvée -->
+    <div *ngIf="pharmacies.length === 0">
+      <p>Aucune pharmacie trouvée.</p>
+    </div>
+  
+    <!-- Tableau des pharmacies -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom de la Pharmacie</th>
+          <th>Adresse</th>
+          <th>Numéro de Téléphone</th>
+          <th>Email</th>
+          <th>Pays</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pharmacy of pharmacies; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ pharmacy.name }}</td>
+          <td>{{ pharmacy.address }}</td>
+          <td>{{ pharmacy.phone }}</td>
+          <td>{{ pharmacy.email }}</td>
+          <td>{{ pharmacy.pays }}</td>
+          <td>
+            <!-- Liens vers les détails, modification et suppression -->
+            <a [routerLink]="['/pharmacies/details', pharmacy.id]" class="btn btn-info btn-sm">Détails</a>
+            <a [routerLink]="['/pharmacies/edit', pharmacy.id]" class="btn btn-warning btn-sm">Modifier</a>
+            <button class="btn btn-danger btn-sm">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

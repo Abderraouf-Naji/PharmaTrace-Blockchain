@@ -1,0 +1,63 @@
+
+<br>
+
+<div class="container">
+
+<h3>Détails de l'employé</h3>
+<br>
+<div class="box">
+    
+    <div>
+
+      <img src="../assets/download.jpg">
+    </div>
+<div >
+    <table  class=" table table-striped  border-dark  ">
+        <thead class=" table-dark">        
+        <tr>
+          <th  >Attribut</th>
+          <th  >Valeur</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        <tr>
+          <td><b>Prénom</b></td>
+          <td>{{employee.fname}}</td>
+        </tr>
+        <tr>
+          <td><b>Nom</b></td>
+          <td>{{employee.lname}}</td>
+        </tr>
+        <tr>
+          <td><b>Email</b></td>
+          <td>{{employee.email}}</td>
+        </tr>
+        <tr>
+          <td><b>Salaire</b></td>
+          <td>{{employee.salary}}</td>
+        </tr>
+        <tr>
+          <td><b>Département</b></td>
+          <td>{{employee.department}}</td>
+        </tr>
+        <tr>
+          <td><b>Désignation</b></td>
+          <td>{{employee.designation}}</td>
+        </tr>
+        <tr>
+          <td><b>La date d'adhésion</b></td>
+          <td>{{employee.joiningDate}}</td>
+        </tr>
+
+    </tbody>    
+      </table>
+
+      <a routerLink="/updating-by-id/{{employee.id}}" id="btn1"class="btn btn-secondary">Update Details</a>
+      <a routerLink="/show-all-employees" id="btn2" class="btn btn-danger">Back</a>
+</div>
+    
+</div>
+
+</div>

@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <h2 class="text-center">Ajouter un Distributeur</h2>
+  
+    <!-- Formulaire pour ajouter un distributeur -->
+    <form (ngSubmit)="onSubmit()" #distributorForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nom du Distributeur</label>
+        <input type="text" id="name" class="form-control" required [(ngModel)]="distributor.name" name="name" #name="ngModel">
+        <div *ngIf="name.invalid && name.touched" class="text-danger">Le nom est requis</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Adresse</label>
+        <input type="text" id="address" class="form-control" required [(ngModel)]="distributor.address" name="address" #address="ngModel">
+        <div *ngIf="address.invalid && address.touched" class="text-danger">L'adresse est requise</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Numéro de Téléphone</label>
+        <input type="text" id="phone" class="form-control" required [(ngModel)]="distributor.phone" name="phone" #phone="ngModel">
+        <div *ngIf="phone.invalid && phone.touched" class="text-danger">Le numéro de téléphone est requis</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" required [(ngModel)]="distributor.email" name="email" #email="ngModel">
+        <div *ngIf="email.invalid && email.touched" class="text-danger">L'email est requis</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="country">Pays</label>
+        <input type="text" id="country" class="form-control" required [(ngModel)]="distributor.country" name="country" #country="ngModel">
+        <div *ngIf="country.invalid && country.touched" class="text-danger">Le pays est requis</div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="distributorForm.invalid">Ajouter le Distributeur</button>
+    </form>
+  
+    <div *ngIf="formSubmitted" class="alert alert-success mt-3">
+      Distributeur ajouté avec succès!
+    </div>
+  </div>
+  

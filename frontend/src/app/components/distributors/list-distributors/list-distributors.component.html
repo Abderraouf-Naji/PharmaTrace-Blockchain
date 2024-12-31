@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <h2 class="text-center">Liste des Distributeurs</h2>
+  
+    <!-- Table des distributeurs -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Téléphone</th>
+          <th>Email</th>
+          <th>Pays</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Boucle sur la liste des distributeurs -->
+        <tr *ngFor="let distributor of distributors; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ distributor.name }}</td>
+          <td>{{ distributor.address }}</td>
+          <td>{{ distributor.phone }}</td>
+          <td>{{ distributor.email }}</td>
+          <td>{{ distributor.country }}</td>
+          <td>
+            <!-- Actions pour chaque distributeur -->
+            <button class="btn btn-info btn-sm" (click)="viewDetails(distributor.id)">Détails</button>
+            <button class="btn btn-warning btn-sm" (click)="editDistributor(distributor.id)">Modifier</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteDistributor(distributor.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Message lorsque la liste est vide -->
+    <div *ngIf="distributors.length === 0" class="alert alert-warning">
+      Aucun distributeur trouvé.
+    </div>
+  </div>
+  

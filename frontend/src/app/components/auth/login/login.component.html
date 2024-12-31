@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-4">
+        <div class="card card-container text-center">
+            <img
+    id="profile-img"
+    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+    width="300px"
+    height="300px"
+    class="profile-img-card"
+/>
+
+            <!-- Check if user is not logged in -->
+            <div *ngIf="!isLoggedIn">
+                <form
+                    name="form"
+                    (ngSubmit)="f.form.valid && onSubmit()"
+                    #f="ngForm"
+                    novalidate
+                >
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="username"
+                            [(ngModel)]="form.username"
+                            required
+                            #username="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+                        />
+                        <!-- Display validation message if username is invalid -->
+                        <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+                            Username is required!
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            [(ngModel)]="form.password"
+                            required
+                            minlength="6"
+                            #password="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+                        />
+                        <!-- Display validation messages for password -->
+                        <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+                            <div *ngIf="password.errors['required']">Password is required</div>
+                            <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block">Login</button>
+                    </div>
+
+                    <!-- Display login error message if login fails -->
+                    <div class="form-group" *ngIf="f.submitted && isLoginFailed">
+                        <div class="alert alert-danger" role="alert">
+                            Login failed: {{ errorMessage }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Show success message if logged in -->
+            <div *ngIf="isLoggedIn" class="alert alert-success">
+                Logged in as {{ roles }}.
+            </div>
+        </div>
+    </div>
+</div>

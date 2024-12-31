@@ -1,0 +1,30 @@
+C:\Users\najif\Desktop\BlockChainProject>npx hardhat run scripts/deploy.js --network hedera
+Clé privée: d8c7836bdeaaa2f5d89e424b3a0a229685ce1669bcf6fdaf4ee875164d8b6512
+Déploiement avec l'adresse : 0x0cf9d98845279aFa10462D585E85427b5Ec423b0
+Déploiement de EntityManager...
+En attente du déploiement de EntityManager...
+EntityManager déployé à l'adresse : 0xD9e7e534bc6C22150286090a1F486B5766a5187A
+Déploiement de LotManager...
+En attente du déploiement de LotManager...
+LotManager déployé à l'adresse : 0x66CE7C72bF1E7e27280345C06D3D1e0c61FfBE01
+Déploiement de SupplyChainManager...
+En attente du déploiement de SupplyChainManager...
+SupplyChainManager déployé à l'adresse : 0x4dAd214BE3216dbeb694D1F9A86687964464F2eE
+Tous les contrats ont été déployés avec succès.
+
+
+
+
+
+
+
+
+
+
+C:\Users\najif\Desktop\BlockChainProject>
+ 
+npx hardhat run test --network hedera
+npx hardhat run scripts/registerEntity.js --network hedera
+npx hardhat run scripts/insertLot.js --network hedera
+npx hardhat run scripts/transferLot.js --network hedera
+npx hardhat run scripts/createLot.js 0x00000000000000000000000000000000004eF169

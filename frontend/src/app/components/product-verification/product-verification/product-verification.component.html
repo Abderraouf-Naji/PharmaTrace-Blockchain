@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2 class="text-center">Vérification des Produits</h2>
+    
+    <!-- Navigation pour sélectionner les différentes actions -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <nav class="nav justify-content-center">
+              <a class="btn btn-primary btn-lg mx-2" routerLink="qr-scan" routerLinkActive="active">Scanner QR Code</a>
+              <a class="btn btn-primary btn-lg mx-2" routerLink="search" routerLinkActive="active">Rechercher un Produit</a>
+              <a class="btn btn-primary btn-lg mx-2" routerLink="details" routerLinkActive="active">Détails du Produit</a>
+              <a class="btn btn-primary btn-lg mx-2" routerLink="history" routerLinkActive="active">Historique des Vérifications</a>
+            </nav>
+          </div>
+    </div>
+  
+    <!-- Contenu de la section active -->
+    <div class="mt-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

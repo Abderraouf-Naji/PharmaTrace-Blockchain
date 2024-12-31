@@ -1,0 +1,88 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Tableau de Bord - Traçabilité des Produits Pharmaceutiques</h2>
+  
+    <div class="row">
+      <!-- Section pour les Statistiques -->
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title">Statistiques de Traçabilité</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <p><strong>Total des Produits Vérifiés:</strong> 120</p>
+              </div>
+              <div class="col-6">
+                <p><strong>Produits Contrefaits:</strong> 5</p>
+              </div>
+              <div class="col-6">
+                <p><strong>Produits Expirés:</strong> 3</p>
+              </div>
+              <div class="col-6">
+                <p><strong>Produits en Stock:</strong> 112</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        <!-- Section pour les Alertes -->
+        <div class="col-md-12">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Alertes Récentes</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item">Produit expiré : Lot #12345 - <strong>Vérification requise</strong></li>
+                <li class="list-group-item">Produit suspect : Lot #67890 - <strong>Alertes contrefaçon</strong></li>
+                <li class="list-group-item">Produit en stock faible : Lot #11223 - <strong>Rupture imminente</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+    
+
+  
+      <!-- Section pour le Graphique -->
+      <div class="col-md-6">
+        <div class="card mb-1">
+          <div class="card-header">
+            <h5 class="card-title">Graphique de Vérifications</h5>
+          </div>
+          <div class="card-body">
+            <!-- Vous pouvez intégrer ici un graphique avec une bibliothèque comme Chart.js ou autre -->
+            <canvas id="verificationChart" width="305" height="305"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="row">
+      <!-- Section des Actions -->
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Actions Rapides</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <a class="btn btn-primary" routerLink="/product-verification" role="button">Vérification Produit</a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a class="btn btn-secondary" routerLink="/inventory" role="button">Gestion des Stocks</a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a class="btn btn-success" routerLink="/alerts" role="button">Voir Alertes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

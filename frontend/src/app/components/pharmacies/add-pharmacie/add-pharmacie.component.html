@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2 class="text-center">Ajouter une Pharmacie</h2>
+  
+    <form (ngSubmit)="onSubmit()" #pharmacyForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nom de la Pharmacie</label>
+        <input type="text" id="name" class="form-control" required [(ngModel)]="pharmacy.name" name="name" #name="ngModel">
+        <div *ngIf="name.invalid && name.touched" class="text-danger">Le nom est requis</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Adresse</label>
+        <input type="text" id="address" class="form-control" required [(ngModel)]="pharmacy.address" name="address" #address="ngModel">
+        <div *ngIf="address.invalid && address.touched" class="text-danger">L'adresse est requise</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Numéro de Téléphone</label>
+        <input type="text" id="phone" class="form-control" required [(ngModel)]="pharmacy.phone" name="phone" #phone="ngModel">
+        <div *ngIf="phone.invalid && phone.touched" class="text-danger">Le numéro de téléphone est requis</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" required [(ngModel)]="pharmacy.email" name="email" #email="ngModel">
+        <div *ngIf="email.invalid && email.touched" class="text-danger">L'email est requis</div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="pharmacyForm.invalid">Ajouter la Pharmacie</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,30 @@
+
+<div *ngIf="!loading && !error">
+  <h2>Liste des Fabricants</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Adresse</th>
+        <th>Pays</th>
+        <th>Compte (Hedera)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fabricant of fabricants">
+        <td>{{ fabricant.name }}</td>
+        <td>{{ fabricant.email }}</td>
+        <td>{{ fabricant.phone }}</td>
+        <td>{{ fabricant.address }}</td>
+        <td>{{ fabricant.country }}</td>
+        <td>{{ fabricant.hederaAccount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+

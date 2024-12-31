@@ -1,0 +1,50 @@
+<div class="container my-5">
+    <h2 class="text-center mb-4">Add New Transaction</h2>
+    <form (ngSubmit)="onSubmit()" class="p-4 border rounded bg-light">
+      <div class="mb-3">
+        <label for="product" class="form-label">Product:</label>
+        <input id="product" class="form-control" [(ngModel)]="transaction.product" name="product" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity:</label>
+        <input id="quantity" type="number" class="form-control" [(ngModel)]="transaction.quantity" name="quantity" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="unitPrice" class="form-label">Unit Price (€):</label>
+        <input id="unitPrice" type="number" class="form-control" [(ngModel)]="transaction.unitPrice" name="unitPrice" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="manufacturer" class="form-label">Manufacturer:</label>
+        <input id="manufacturer" class="form-control" [(ngModel)]="transaction.manufacturer" name="manufacturer" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="distributor" class="form-label">Distributor:</label>
+        <input id="distributor" class="form-control" [(ngModel)]="transaction.distributor" name="distributor" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="pharmacy" class="form-label">Pharmacy:</label>
+        <input id="pharmacy" class="form-control" [(ngModel)]="transaction.pharmacy" name="pharmacy" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="date" class="form-label">Date:</label>
+        <input id="date" type="date" class="form-control" [(ngModel)]="transaction.date" name="date" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="transactionType" class="form-label">Transaction Type:</label>
+        <select id="transactionType" class="form-select" [(ngModel)]="transaction.transactionType" name="transactionType" required>
+          <option value="Achat">Achat</option>
+          <option value="Vente">Vente</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary w-100">Add Transaction</button>
+    </form>
+  </div>
+  

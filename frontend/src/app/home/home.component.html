@@ -1,0 +1,127 @@
+<body>
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img style="width: 100vw; height: 610px;" src="../assets/2.jpg" alt="Premier diaporama aléatoire" />
+        </div>
+        <div class="carousel-caption">
+          <h1 id="p1">Gestion des employés simplifiée.</h1>
+          <p>Votre solution complète pour la gestion des ressources humaines</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img style="width: 100vw; height: 610px;" src="../assets/1.jpg" alt="Deuxième diaporama aléatoire" />
+        </div>
+        <div class="carousel-caption">
+          <h3 id="p1">Optimisez la gestion des ressources humaines</h3>
+          <p>Centralisez les informations de vos employés en un seul endroit.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  
+    <!-- Zone MetaMask -->
+    <section id="metamask-login" class="section-2 odd highlights image-right counter skills featured">
+      <br><br>
+      <div class="container">
+        <h2>Authentification avec MetaMask</h2>
+        <div *ngIf="!userAddress">
+          <button class="btn btn-primary" (click)="connectToMetaMask()">Se connecter avec MetaMask</button>
+        </div>
+        <div *ngIf="userAddress">
+          <p><strong>Utilisateur connecté :</strong> {{ userAddress }}</p>
+          <button class="btn btn-secondary" (click)="sendTransaction()">Envoyer 0.1 ETH</button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Compétences -->
+    <section id="skills" class="section-2 odd highlights image-right counter skills featured">
+      <br><br>
+      <div class="divMain container">
+        <div class="container c1 text">
+          <h1 class="text">Technologies utilisées :</h1>
+          <br>
+          <ul class="category" id="t1">
+            <li>Technologies Backend
+              <ul class="subcategory">
+                <li>Java</li>
+                <li>Spring Boot</li>
+              </ul>
+            </li>
+            <li>Technologies Frontend
+              <ul class="subcategory">
+                <li>Angular</li>
+              </ul>
+            </li>
+            <li>Technologies de Base de Données
+              <ul class="subcategory">
+                <li>MySQL</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="../assets/about-5.webp" class="fit-image" alt="Image adaptée">
+        </div>
+      </div>
+      <br><br>
+    </section>
+  
+    <!-- Section à propos -->
+    <section class="about">
+      <br><br>
+      <div class="container">
+        <div class="about-section">
+          <h1>À propos de notre système</h1>
+          <br>
+          <p>Notre système de gestion des employés permet une gestion centralisée et efficace des informations des employés. Grâce à une interface intuitive, vous pouvez facilement suivre les données, les performances et les évolutions de vos employés, tout en simplifiant les tâches administratives.</p>
+        </div>
+        <br><br>
+        <h2 style="text-align:center">Notre équipe</h2>
+        <br><br>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="../assets/team1.jpg" alt="Jane" style="width:100%">
+              <div class="container">
+                <h2>Jane Alis</h2>
+                <p class="title">PDG & Fondatrice</p>
+                <p>Jane est la fondatrice de notre entreprise et supervise toutes les opérations. Elle est passionnée par l'innovation et la gestion efficace des ressources humaines.</p>
+                <p>janeAlis@gmail.com</p>
+                <p><button class="button">Contacter</button></p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="column">
+            <div class="card">
+              <img src="../assets/team2.jpg" alt="Mike" style="width:100%">
+              <div class="container">
+                <h2>Mohamed</h2>
+                <p class="title">Directeur Technique</p>
+                <p>Mohamed Haimoudane est le directeur technique et veille à ce que notre système reste à la pointe de la technologie. Il s'assure que toutes les fonctionnalités sont optimisées et efficaces.</p>
+                <p>medExpertCompte@gmail.com</p>
+                <p><button class="button">Contacter</button></p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="column">
+            <div class="card">
+              <img src="../assets/team3.jpg" alt="John" style="width:100%">
+              <div class="container">
+                <h2>John Doe</h2>
+                <p class="title">Responsable Support</p>
+                <p>John est responsable du support technique et aide nos clients à résoudre leurs problèmes. Il est toujours prêt à fournir une assistance et des conseils.</p>
+                <p>johnDoe@gmail.com</p>
+                <p><button class="button">Contacter</button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br><br>
+    </section>
+  </body>
+  

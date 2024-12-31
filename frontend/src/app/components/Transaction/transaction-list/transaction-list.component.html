@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Liste des Transactions</h2>
+  
+  <!-- Affichage du message d'erreur -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Liste des transactions -->
+  <table *ngIf="transactions && transactions.length > 0" class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID de Transaction</th>
+        <th>Status</th>
+        <th>Gaz Utilisé</th>
+        <th>Numéro de Bloc</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.transactionId }}</td>
+        <td>{{ transaction.status }}</td>
+        <td>{{ transaction.gasUsed }}</td>
+        <td>{{ transaction.blockNumber }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="showTransactionDetails(transaction.transactionId)">Voir Détails</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Affichage d'un message si aucune transaction n'est trouvée -->
+  <div *ngIf="transactions && transactions.length === 0" class="alert alert-info">
+    Aucune transaction trouvée.
+  </div>
+
+  <!-- Détails de la transaction sélectionnée -->
+  <div *ngIf="selectedTransaction" class="card mt-4">
+    <div class="card-body">
+      <h3 class="card-title">Détails de la Transaction</h3>
+      <p><strong>ID de Transaction:</strong> {{ selectedTransaction.transactionId }}</p>
+      <p><strong>Statut:</strong> {{ selectedTransaction.status }}</p>
+      <p><strong>Gaz Utilisé:</strong> {{ selectedTransaction.gasUsed }}</p>
+      <p><strong>Numéro de Bloc:</strong> {{ selectedTransaction.blockNumber }}</p>
+      <p><strong>Message d'Erreur:</strong> {{ selectedTransaction.errorMessage || 'Aucun' }}</p>
+    </div>
+  </div>
+</div>

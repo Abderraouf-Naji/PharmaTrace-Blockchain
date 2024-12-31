@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2 class="text-center">Scanner le Code QR du Produit</h2>
+  
+    <div class="row justify-content-center mt-4">
+      <!-- Bouton pour démarrer le scan -->
+      <div class="col-md-6 text-center">
+        <button class="btn btn-success btn-lg" (click)="startScan()">Démarrer le Scan</button>
+      </div>
+    </div>
+  
+    <!-- Zone pour afficher le scanner -->
+    <div *ngIf="isScanning" class="mt-4">
+      <zxing-scanner
+        [formats]="formats" 
+        (scanSuccess)="onScanSuccess($event)"
+        class="scanner"
+        [torch]="true">
+      </zxing-scanner> <!-- Pas de balise de fermeture supplémentaire -->
+    </div>
+  
+    <!-- Affichage du résultat du scan -->
+    <div *ngIf="scanResult" class="mt-4">
+      <h4>Résultat du Scan :</h4>
+      <p>{{ scanResult }}</p>
+    </div>
+  </div>
+  
